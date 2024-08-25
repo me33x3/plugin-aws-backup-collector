@@ -1,5 +1,5 @@
-spaceone-core
-spaceone-api
+kt-ds-core
+kt-ds-api
 boto3
 schematics
 moto

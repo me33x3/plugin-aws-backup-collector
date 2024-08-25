@@ -1,1 +1,0 @@
-from spaceone.inventory.connector.aws_sqs_connector.connector import SQSConnector

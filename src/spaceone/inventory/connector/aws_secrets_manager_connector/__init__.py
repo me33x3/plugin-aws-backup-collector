@@ -1,1 +1,0 @@
-from spaceone.inventory.connector.aws_secrets_manager_connector.connector import SecretsManagerConnector

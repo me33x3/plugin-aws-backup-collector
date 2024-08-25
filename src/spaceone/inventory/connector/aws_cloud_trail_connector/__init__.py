@@ -1,1 +1,0 @@
-from spaceone.inventory.connector.aws_cloud_trail_connector.connector import CloudTrailConnector

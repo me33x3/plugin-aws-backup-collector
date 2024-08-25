@@ -1,1 +1,0 @@
-from spaceone.inventory.connector.aws_kinesis_data_stream_connector.connector import KinesisDataStreamConnector

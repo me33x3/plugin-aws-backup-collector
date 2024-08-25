@@ -1,1 +1,0 @@
-from spaceone.inventory.connector.aws_vpc_connector.connector import VPCConnector
