@@ -7,7 +7,7 @@ FILTER_FORMAT = []
 BOTO3_HTTPS_VERIFIED = None
 
 CLOUD_SERVICE_GROUP_MAP = {
-    'Backup': 'BackupConnectorManager'
+    'Backup': 'BackupConnectorManager',
     # 'IAM': 'IAMConnectorManager',
     # 'DynamoDB': 'DynamoDBConnectorManager',
     # 'Lambda': 'LambdaConnectorManager',

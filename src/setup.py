@@ -37,6 +37,7 @@ setup(
         'schematics',
         'arnparse',
         'moto',
+        'setuptools',
     ],
     package_data={
         'spaceone': ['inventory/connector/*/schema/widget/*.yaml']

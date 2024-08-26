@@ -7,10 +7,10 @@ from spaceone.inventory.libs.schema.resource import AWSCloudService
 _LOGGER = logging.getLogger(__name__)
 
 
-class Backup(AWSCloudService):
-    arn = StringType(default="")
-    name = StringType(deserialize_from="Name")
-    region_name = StringType(default="")
+class BackupPlan(AWSCloudService):
+    arn = StringType(deserialize_from="BackupPlanArn")
+    name = StringType(deserialize_from="BackupPlanName")
+    backup_plan_id = StringType(default="")
 
     def reference(self):
         return {

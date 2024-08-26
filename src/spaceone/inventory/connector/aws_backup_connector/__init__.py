@@ -1,1 +1,1 @@
-from spaceone.inventory.connector.aws_s3_connector.connector import S3Connector
+from spaceone.inventory.connector.aws_backup_connector.connector import BackupConnector
