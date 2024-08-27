@@ -1,0 +1,18 @@
+---
+cloud_service_group: EC2
+cloud_service_type: SecurityGroup
+name: Outbound Rule Total Count
+query:
+  aggregate:
+    - unwind:
+        path: data.ip_permissions_egress
+    - group:
+        fields:
+          - name: value
+            operator: count
+            key: data.ip_permissions_egress
+options:
+  value_options:
+    key: value
+    options:
+      default: 0
