@@ -1,6 +1,6 @@
 from schematics.types import ModelType, StringType, PolyModelType
 
-from spaceone.inventory.connector.aws_backup_connector.schema.data import Backup
+from spaceone.inventory.connector.aws_backup_connector.schema.data import BackupPlan
 from spaceone.inventory.libs.schema.resource import CloudServiceResource, CloudServiceResponse, CloudServiceMeta
 from spaceone.inventory.libs.schema.dynamic_field import TextDyField, ListDyField, EnumDyField, SizeField
 from spaceone.inventory.libs.schema.dynamic_layout import ItemDynamicLayout, TableDynamicLayout, SimpleTableDynamicLayout
@@ -12,11 +12,11 @@ class BackupResource(CloudServiceResource):
     cloud_service_group = StringType(default='Backup')
 
 
-class BackupJobResource(BackupResource):
-    cloud_service_type = StringType(default='BackupJob')
-    data = ModelType(Backup)
+class BackupPlanResource(BackupResource):
+    cloud_service_type = StringType(default='BackupPlan')
+    data = ModelType(BackupPlan)
     _metadata = ModelType(CloudServiceMeta, default=metadata, serialized_name='metadata')
 
 
-class BackupJobResponse(CloudServiceResponse):
-    resource = PolyModelType(BackupJobResource)
+class BackupPlanResponse(CloudServiceResponse):
+    resource = PolyModelType(BackupPlanResource)
