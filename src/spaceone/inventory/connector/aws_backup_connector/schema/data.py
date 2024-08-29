@@ -55,6 +55,7 @@ class BackupPlan(AWSCloudService):
     arn = StringType(deserialize_from="BackupPlanArn")
     name = StringType(deserialize_from="BackupPlanName")
     backup_plan_id = StringType(deserialize_from="BackupPlanId")
+    last_execution_date = DateTimeType(deserialize_from="LastExecutionDate")
     rules = ListType(ModelType(Rule), default=[])
     selections = ListType(ModelType(Selection), default=[])
     jobs = ListType(ModelType(Job), default=[])

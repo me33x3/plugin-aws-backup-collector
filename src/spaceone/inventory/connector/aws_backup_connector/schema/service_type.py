@@ -7,15 +7,7 @@ from spaceone.inventory.conf.cloud_service_conf import *
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
 
-# bucket_total_count_conf = os.path.join(current_dir, 'widget/bucket_total_count.yaml')
-# object_total_count_conf = os.path.join(current_dir, 'widget/object_total_count.yaml')
-# object_total_size_conf = os.path.join(current_dir, 'widget/object_total_size.yaml')
-# bucket_count_by_region_conf = os.path.join(current_dir, 'widget/bucket_count_by_region.yaml')
-# object_count_by_region_conf = os.path.join(current_dir, 'widget/object_count_by_region.yaml')
-# object_total_size_by_region_conf = os.path.join(current_dir, 'widget/object_total_size_by_region.yaml')
-# bucket_count_by_account_conf = os.path.join(current_dir, 'widget/bucket_count_by_account.yaml')
-# object_count_by_account_conf = os.path.join(current_dir, 'widget/object_count_by_account.yaml')
-# object_total_size_by_account_conf = os.path.join(current_dir, 'widget/object_total_size_by_account.yaml')
+bp_total_count_conf = os.path.join(current_dir, 'widget/bp_total_count.yaml')
 
 cst_bp = CloudServiceTypeResource()
 cst_bp.name = 'BackupPlan'
@@ -31,10 +23,14 @@ cst_bp.tags = {
 
 cst_bp._metadata = CloudServiceTypeMeta.set_meta(
     fields=[
+        TextDyField.data_source('ID', 'data.backup_plan_id'),
+        TextDyField.data_source('Last Execution Date', 'data.last_execution_date'),
     ],
     search=[
+        SearchField.set(name='ID', key='data.backup_plan_id'),
     ],
     widget=[
+        CardWidget.set(**get_data_from_yaml(bp_total_count_conf)),
     ]
 )
 

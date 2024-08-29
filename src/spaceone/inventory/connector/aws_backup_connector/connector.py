@@ -43,20 +43,6 @@ class BackupConnector(SchematicAWSConnector):
                 for collect_resource in collect_resources:
                     resources.extend(self.collect_data_by_region(self.service_name, region_name, collect_resource))
 
-                # for data in self.request_data(region_name):
-                #     if getattr(data, 'resource_type', None) and data.resource_type == 'inventory.ErrorResource':
-                #         # Error Resource
-                #         resources.append(data)
-                #     else:
-                #         backup_job_resource = {
-                #             'name': data.name,
-                #             'data': data,
-                #             'account': self.account_id,
-                #             'region_code': region_name,
-                #             'reference': ReferenceModel(data.reference())
-                #         }
-                #
-                #         resources.append(self.response_schema({'resource': BackupJobResource(backup_job_resource)}))
             except Exception as e:
                 error_resource_response = self.generate_error(region_name, '', e)
                 resources.append(error_resource_response)
